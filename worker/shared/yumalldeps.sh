@@ -71,8 +71,11 @@ _main() {
     export YUM_OPTIONS="$YUM_OPTIONS"
 
     mylog "Start: $*"
+    mylog "MYDEBUG: PKG_FAMILY: $PKG_FAMILY"
+    mylog "MYDEBUG: YUM_OPTIONS: $YUM_OPTIONS"
 
     all="$(getdep $*)"
+    mylog "MYDEBUG: all: $all"
     mylog "One per line: $( echo "$all" | wc )"
     mylog "$(echo "$all" | sort -u )"
     mylog "Result:"
